@@ -1117,7 +1117,15 @@ class SubstrateTab(object):
             self.svg_frame = frame
             # print('plot_svg with frame=',self.svg_frame)
             self.plot_svg(self.svg_frame)
-
+        fname = "snapshot00000001.svg"
+        full_fname = os.path.join(self.output_dir, fname)
+        if os.path.isfile(full_fname):            
+            x1 = -40
+            x2 = -20
+            y1 = -45
+            y2 = -45
+            plt.plot([x1,x2],[y1,y2], 'k', linewidth = 5)
+            plt.text(-30, -49, u"20 \u03bcm")
         # plt.subplot(grid[2, 0])
         # oxy_ax = self.fig.add_subplot(grid[2:, 0:1])
         #oxy_ax = self.fig.add_subplot(grid[:2, 2:])
